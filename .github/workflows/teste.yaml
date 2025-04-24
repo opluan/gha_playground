@@ -1,0 +1,21 @@
+name: teste input
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      env:
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
+
+jobs:
+  teste:
+    name: teste
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo env={{ inputs.env }}!
