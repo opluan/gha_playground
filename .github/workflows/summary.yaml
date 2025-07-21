@@ -1,4 +1,4 @@
-name: "[Workflow call] Pulumi Execution"
+name: "GHA summary example"
 
 on:
   workflow_dispatch:
