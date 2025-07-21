@@ -1,0 +1,11 @@
+name: "[Workflow call] Pulumi Execution"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Adding markdown
+        run: echo '### Hello world! ' >> $GITHUB_STEP_SUMMARY
