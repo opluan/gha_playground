@@ -1,0 +1,22 @@
+name: "GHA summary example"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Where I Am
+        run: pwd
+      - name: Chande Directory
+        run: |
+          pwd
+          cd /
+          pwd
+
+          mkdir teste
+          cd teste
+          pwd
+      - name: Check Where I Am
+        run: pwd
