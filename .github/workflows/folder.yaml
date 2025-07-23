@@ -1,4 +1,4 @@
-name: "GHA summary example"
+name: "GHA Folder Test"
 
 on:
   workflow_dispatch:
