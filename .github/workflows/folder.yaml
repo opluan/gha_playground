@@ -12,8 +12,6 @@ jobs:
       - name: Chande Directory
         run: |
           pwd
-          cd /
-          pwd
 
           mkdir teste
           cd teste
