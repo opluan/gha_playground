@@ -20,4 +20,6 @@ jobs:
     steps:
       - name: check env
         run: echo "${{ inputs.env }}"
+      - name: check env default
+        run: echo "${{ inputs.env }}" || 'dev'
         
