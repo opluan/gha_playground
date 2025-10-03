@@ -1,0 +1,23 @@
+name: "GHA env manipulation"
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "Environment name"
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
+
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check env
+        run: echo "${{ inputs.env }}"
+        
