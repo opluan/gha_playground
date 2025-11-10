@@ -3,6 +3,4 @@ on: workflow_dispatch
 
 jobs:
   teste:
-    name: teste
-    runs-on: ubuntu-latest
     uses: opluan/curriculum/.github/workflows/gha_test_call.yaml@main
