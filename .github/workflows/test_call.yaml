@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo
-        uses: ./.github/workflows/sub_folder/test_call.yaml
+        uses: opluan/curriculum/gha_test_call.yaml@main
