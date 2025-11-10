@@ -5,6 +5,4 @@ jobs:
   teste:
     name: teste
     runs-on: ubuntu-latest
-    steps:
-      - name: echo
-        uses: opluan/curriculum/.github/workflows/gha_test_call.yaml@main
+    uses: opluan/curriculum/.github/workflows/gha_test_call.yaml@main
