@@ -3,4 +3,4 @@ on: workflow_dispatch
 
 jobs:
   teste:
-    uses: opluan/curriculum/.github/workflows/gha_test_call.yaml@main
+    uses: opluan/curriculum/gha_test_call.yaml@main
