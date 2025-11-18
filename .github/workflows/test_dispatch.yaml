@@ -1,9 +1,6 @@
 name: "GHA env manipulation"
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       env:

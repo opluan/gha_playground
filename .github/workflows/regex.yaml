@@ -1,0 +1,21 @@
+name: "GHA env manipulation"
+
+on:
+  workflow_dispatch:
+    inputs:
+      isOK:
+        type: boolean
+        default: true
+
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: condition
+        run: |
+          if [ ${{ inputs.name =~ ^foo/ }} ]; then
+            echo "OK"
+          else
+            echo "Not OK"
+          fi
+        
