@@ -1,0 +1,13 @@
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  meu-job:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - run: echo "🎉 Este Job foi executado automaticamente por um evento"
+      - run: echo "🐧 job está rodando em um servidor hospedado pelo GitHub!"
