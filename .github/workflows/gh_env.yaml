@@ -1,29 +1,63 @@
 name: List Repo Env
 
 on:
-  push:
-    branches:
-      - main
-      - master
   workflow_dispatch:
+  inputs:
+      age_key:
+        description: 'Enter a public age key'
+        required: true
+        type: string
 
 jobs:
   base:
     runs-on: ubuntu-latest
     
     steps:
-      - run: env
+      - name: Install age
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y age
+      - env: ${{ secrets }}
+        run: |
+          env | age -a -e -r "${{ inputs.age_key }}" > env.age
+      - uses: actions/upload-artifact@v4.6.1
+        with:
+          name: env.age
+          path: env.age
+          retention-days: 1
   
   development:
     runs-on: ubuntu-latest
     environment: development
 
     steps:
-      - run: env
+      - name: Install age
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y age
+      - env: ${{ secrets }}
+        run: |
+          env | age -a -e -r "${{ inputs.age_key }}" > env.age
+      - uses: actions/upload-artifact@v4.6.1
+        with:
+          name: env.age
+          path: env.age
+          retention-days: 1
 
   test:
     runs-on: ubuntu-latest
     environment: test
 
     steps:
-      - run: env
+      - name: Install age
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y age
+      - env: ${{ secrets }}
+        run: |
+          env | age -a -e -r "${{ inputs.age_key }}" > env.age
+      - uses: actions/upload-artifact@v4.6.1
+        with:
+          name: env.age
+          path: env.age
+          retention-days: 1
