@@ -2,7 +2,7 @@ name: List Repo Env
 
 on:
   workflow_dispatch:
-  inputs:
+    inputs:
       age_key:
         description: 'Enter a public age key'
         required: true
