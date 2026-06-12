@@ -1,9 +1,11 @@
+name: List Repo Env
+
 on:
   push:
     branches:
       - main
       - master
-  workflow_call:
+  workflow_dispatch:
 
 jobs:
   base:
