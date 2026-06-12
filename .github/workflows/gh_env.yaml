@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_call:
+
+jobs:
+  base:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - run: env
+  
+  development:
+    runs-on: ubuntu-latest
+    environment: development
+
+    steps:
+      - run: env
+
+  test:
+    runs-on: ubuntu-latest
+    environment: test
+
+    steps:
+      - run: env
