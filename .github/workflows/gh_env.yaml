@@ -19,10 +19,10 @@ jobs:
           sudo apt-get install -y age
       - env: ${{ secrets }}
         run: |
-          echo '${{ toJSON(vars) }}' | jq -r 'to_entries[] | "\(.key)=\(.value)"' >> $GITHUB_ENV
-          echo ${{env.DEV_ENV_SECRET}}
-          echo ${{env.DEV_ENV_VARIABLE}}
-          env | age -a -e -r "${{ inputs.age_key }}" > env.age
+          echo '${{ toJSON(vars) }}' | jq -r 'to_entries[] | "\(.key)=\(.value)"' >> envfile
+          env >> envfile
+          
+          cat envfile | age -a -e -r "${{ inputs.age_key }}" > env.age
       - uses: actions/upload-artifact@v4.6.1
         with:
           name: env.age
@@ -40,10 +40,10 @@ jobs:
           sudo apt-get install -y age
       - env: ${{ secrets }}
         run: |
-          echo '${{ toJSON(vars) }}' | jq -r 'to_entries[] | "\(.key)=\(.value)"' >> $GITHUB_ENV
-          echo ${{env.DEV_ENV_SECRET}}
-          echo ${{env.DEV_ENV_VARIABLE}}
-          env | age -a -e -r "${{ inputs.age_key }}" > env.age
+          echo '${{ toJSON(vars) }}' | jq -r 'to_entries[] | "\(.key)=\(.value)"' >> envfile
+          env >> envfile
+          
+          cat envfile | age -a -e -r "${{ inputs.age_key }}" > env.age
       - uses: actions/upload-artifact@v4.6.1
         with:
           name: env.age
@@ -61,10 +61,10 @@ jobs:
           sudo apt-get install -y age
       - env: ${{ secrets }}
         run: |
-          echo '${{ toJSON(vars) }}' | jq -r 'to_entries[] | "\(.key)=\(.value)"' >> $GITHUB_ENV
-          echo ${{env.DEV_ENV_SECRET}}
-          echo ${{env.DEV_ENV_VARIABLE}}
-          env | age -a -e -r "${{ inputs.age_key }}" > env.age
+          echo '${{ toJSON(vars) }}' | jq -r 'to_entries[] | "\(.key)=\(.value)"' >> envfile
+          env >> envfile
+          
+          cat envfile | age -a -e -r "${{ inputs.age_key }}" > env.age
       - uses: actions/upload-artifact@v4.6.1
         with:
           name: env.age
